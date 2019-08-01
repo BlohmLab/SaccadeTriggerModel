@@ -72,9 +72,7 @@ for VSi = 1:length(VSrange)
 end  %end of loop over VSrange
 str_timestamp = date;
 filename = sprintf('SaccConfidencePhaseplot_%s.mat', str_timestamp);
-cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final\Simulation Data\Current')
 save(filename, 'predVar', 'predMean', 'PEsens', 'PEsensVar', 'RSsens', 'RSsensVar', 'VSrange', 'PSrange', '-v7.3', '-nocompression')
-cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final')
 
 
 
@@ -231,24 +229,7 @@ else
     plot(lateSaccRaw.deltaDet(1,200), lateSaccRaw.deltaDet(2,200),'ko', 'linewidth', 1 )
     plot(lateSaccRaw.deltaDet(1,200:end), lateSaccRaw.deltaDet(2,200:end),'k', 'linewidth', 1 )
 end
-% %late sacc 2
-% PS = -15; VS = 40;
-% [target, trialParams] = Simulate_TargetMotion2('singleStepRamp', [PS, VS]);
-% Params = Initialize_DefaultTriggerModel;
-% Params.TrialParams = trialParams;
-% [lateSaccRaw2, lateSaccSummary2] = Simulate_VisTracking(target, Params, 1);
-% figure(10)
-% hold on
-% if ~isnan(lateSaccSummary2.saccMetrics(1)) && lateSaccSummary2.saccMetrics(1)<500
-%     plot(lateSaccRaw2.deltaDet(1,200:(200+lateSaccSummary2.saccMetrics(1))), lateSaccRaw2.deltaDet(2,200:(200+lateSaccSummary2.saccMetrics(1))),'b', 'linewidth', 1 )
-%     plot(lateSaccRaw2.deltaDet(1,(200+lateSaccSummary2.saccMetrics(1))), lateSaccRaw2.deltaDet(2,(200+lateSaccSummary2.saccMetrics(1))),'bd', 'linewidth', 1 )
-%     plot(lateSaccRaw2.deltaDet(1,200), lateSaccRaw2.deltaDet(2,200),'bo', 'linewidth', 1 )
-%     
-% else
-%     plot(lateSaccRaw2.deltaDet(1,200), lateSaccRaw2.deltaDet(2,200),'ko', 'linewidth', 1)
-%     plot(lateSaccRaw2.deltaDet(1,200:end), lateSaccRaw2.deltaDet(2,200:end),'k', 'linewidth', 1)
-%     
-% end
+
 
 %maybe sacc
 PS = -10; VS = 40;

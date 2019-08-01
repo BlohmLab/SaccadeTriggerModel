@@ -59,18 +59,6 @@ Params_static.TrialParams = TrialParamsStatic;
 figure(figN)
 [legendHandle, legendLabels] = Plot_SingleTrials(RawData_static, Params_static, trialRepeats, 'static', legendHandle, legendLabels);
 
-% 
-% %Plot RS vs PE
-% % figure(2)
-% figN2 = get(gcf,'number');
-% [legendHandle2, legendLabels2] = Plot_SingleTrial_Phase(RawData_fugal, Params_fugal, SummaryData_fugal, trialRepeats, 'fugal');
-% [legendHandle2, legendLabels2] = Plot_SingleTrial_Phase(RawData_petal, Params_petal, SummaryData_petal, trialRepeats, 'petal', legendHandle2, legendLabels2);
-% 
-% 
-% 
-% % figure(3)
-% Plot_SingleTrial_Phase2(RawData_fugal, Params_fugal, SummaryData_fugal, trialRepeats)
-% Plot_SingleTrial_Phase2(RawData_petal, Params_petal, SummaryData_petal, trialRepeats)
 
 
 %% Double Step Ramp Simulations
@@ -100,6 +88,8 @@ Params_fugalDSR.TrialParams = TrialParamsFugalDSR;
 
 
 %% Plot Txe 
+% Plots Txe(t) and meanTxe for single trials (first 400ms after step ramp)
+
 Params = Initialize_DefaultTriggerModel;
                       %keep track of figure number (to plot multiple things on same figure)
 trialRepeats = 50;   

@@ -25,16 +25,12 @@ trialRepeats = 100;                     %100 repetitions per (PS,VS) combination
 
 %Plot
 Plot_bieg(SummaryData_bieg, Params_bieg);
-% cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final\Plots')
-% print -depsc2 -painters BiegNew2.eps
-% cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final')
+
 
 %Save Simulation Data
 str_timestamp = date;
-filename = sprintf('SimData_bieg_dt125_dn00_thresh40_tau_25_rep%g_%s', trialRepeats, str_timestamp);
-cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final\Simulation Data\Current')
+filename = sprintf('SimData_biegrep%g_%s', trialRepeats, str_timestamp);
 save(filename, 'RawData_bieg', 'SummaryData_bieg', 'Params_bieg', '-v7.3')
-cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final')
 
 %% Simulate de Brouwer et al 2002. http://www.ncbi.nlm.nih.gov/pubmed/11877535
 %'deBrouwer' uses same (PS,VS) conditions used in de Brouwer et al., 2002;
@@ -54,9 +50,7 @@ trialRepeats = 50;
 %Save Simulation Data
 str_timestamp = date;
 filename = sprintf('SimData_deBrouwer_rep%g_%s', trialRepeats, str_timestamp);
-cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final\Simulation Data\Current')
 save(filename, 'RawData_deBrouwer', 'SummaryData_deBrouwer', 'Params_deBrouwer', '-v7.3')
-cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final')
 
 %Plot
 
@@ -67,11 +61,7 @@ cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Fi
 
 Plot_deBrouwer2(SummaryData_deBrouwer, Params_deBrouwer);
 Plot_deBrouwer3(SummaryData_deBrouwer, Params_deBrouwer);
-title('deBrouwer, delT 125')
 
-% cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final\Plots')
-% print -depsc2 -painters deBrouwer3.eps
-% cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final')
 
 %% Simulate de Brouwer et al 2002. http://www.ncbi.nlm.nih.gov/pubmed/11877535
 % see comments in above section
@@ -92,7 +82,5 @@ Plot_SRTdistributions( SummaryData_txt, Params_txt);
 %Save
 str_timestamp = date;
 filename = sprintf('SimData_txt_%g_%s', trialRepeats, str_timestamp);
-cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final\Simulation Data\Current')
 save(filename, 'RawData_txt', 'SummaryData_txt', 'Params_txt', '-v7.3')
-cd('E:\OneDrive - Queen''s University\Basic Simulations\Saccade Trigger Model Final')
 
